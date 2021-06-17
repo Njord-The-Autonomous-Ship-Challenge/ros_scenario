@@ -1,0 +1,5 @@
+<launch>
+    <node ns="/" name="scenario_instance" pkg="ros_scenario" type="scenario_client.py" output="screen">
+	<rosparam file="$(find ros_scenario)/config/scenario_config.yaml" command="load" />
+    </node>
+</launch>

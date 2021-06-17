@@ -1,0 +1,11 @@
+<launch>
+    <node ns="/" name="scenario_instance" pkg="ros_scenario" type="scenario_client.py" output="screen">
+	<rosparam file="$(find ros_scenario)/config/scenario_config.yaml" command="load" />
+    </node>
+    <node ns="/" name="force_controller" pkg="ros_clients" type="force_controller_example_client.py" output="screen">
+        <rosparam file="$(find ros_clients)/config/example_client.yaml" command="load" />
+    </node>
+    <node ns="/" name="adapter_server" pkg="ros_adapter" type="server.py" output="screen">
+        <rosparam file="$(find ros_adapter)/config/server.yaml" command="load" />
+    </node>
+</launch>
